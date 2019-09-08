@@ -7,7 +7,7 @@ import {Link} from 'react-router-dom'
     <div>
       {avengers.map(avenger => (
         <div >
-          <img src={avenger.thumbnail}/>
+          <img src={avenger.thumbnail} alt={avenger.name}/>
           <Link to={`avengers/${avenger.id}`}>
             <h2>{avenger.name}</h2>
             <p>{avenger.nickname}</p>
