@@ -7,10 +7,10 @@ export default function AvengersPage(props) {
   const avenger = avengers.find(avenger => `${avenger.id}` === id)
   return (
     <div>
-      <h3>Avengers Page</h3>
       <img src={avenger.thumbnail}/>
-      <h2>{avenger.name}</h2>
-      <p>{avenger.nickname}</p>
+      <h1>{avenger.name}</h1>
+      <h3>{avenger.nickname}</h3>
+      <p>{avenger.description}</p>
     </div>
   )
 }
