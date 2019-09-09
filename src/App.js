@@ -1,5 +1,5 @@
 import React from 'react';
-import {Route, Link} from 'react-router-dom';
+import {Route, NavLink} from 'react-router-dom';
 
 import Home from './components/Home';
 import AvengersList from './components/AvengersList';
@@ -14,8 +14,8 @@ function App() {
   return (
     <div className="App">
       <ul className="navbar">
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/avengers">Avengers</Link></li>
+        <li><NavLink activeClassName='activeNavButton' to="/">Home</NavLink></li>
+        <li><NavLink activeClassName='activeNavButton' to="/avengers">Avengers</NavLink></li>
       </ul>
       <Route exact path='/' component={Home}/>
       <Route exact path='/avengers' render={(props) => <AvengersList {...props} avengers={avengers}/>}/>

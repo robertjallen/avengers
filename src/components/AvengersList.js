@@ -1,17 +1,21 @@
 import React from 'react'
-import {Link} from 'react-router-dom' 
+
+function routeToAvenger(props, avenger){
+  props.history.push(`/avengers/${avenger.id}`);
+}
 
  function AvengersList(props) {
    console.log('AvnList', props)
   return (
-    <div>
+    <div className="characters-list-wrapper">
       {props.avengers.map((avenger, id) => (
-        <div key={id}>
+        <div className="character-card" key={id}>
           <img src={avenger.thumbnail} alt={avenger.name}/>
-          <Link to={`avengers/${avenger.id}`}>
+          <div onClick={() => routeToAvenger(props, avenger)}>
             <h2>{avenger.name}</h2>
+          </div>
+            
             <p>{avenger.nickname}</p>
-          </Link>
         </div> 
       ))}
     </div>
