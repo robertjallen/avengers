@@ -1,10 +1,8 @@
 import React from 'react'
 
-import {avengers} from '../data'
-
 export default function AvengersPage(props) {
   const id = props.match.params.id;
-  const avenger = avengers.find(avenger => `${avenger.id}` === id)
+  const avenger = props.avengers.find(avenger => `${avenger.id}` === id)
   return (
     <div>
       <img src={avenger.thumbnail} alt={avenger.name}/>
